@@ -10,6 +10,12 @@
 
 @import url('./animations.css');
 
-/* Sections style */
+/* Pages style */
+
+@import url('./timer.css');
+@import url('./snackbar.css');
 
 @import url('./back-link.css');
+@import url('./header.css');
+
+@import url('flatpickr/dist/flatpickr.min.css');
