@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>timer</title>
-    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/styles-3q_xc5zP.css">
+    <script type="module" crossorigin src="/goit-advancedjs-hw-02/1-timer.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/vendor-CLQ_oLGC.js">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/styles-kSyt9vOO.css">
   </head>
   <body>
     <main>
@@ -13,27 +15,30 @@
         <a href="./index.html">Go to home</a>
       </section>
 
-      <input type="text" id="datetime-picker" />
-      <button type="button" data-start>Start</button>
+      <div class="container-timer">
+        <input type="text" id="datetime-picker" placeholder="Jacob Mercer" />
+        <button type="button" data-start>Start</button>
 
-      <div class="timer">
-        <div class="field">
-          <span class="value" data-days>00</span>
-          <span class="label">Days</span>
-        </div>
-        <div class="field">
-          <span class="value" data-hours>00</span>
-          <span class="label">Hours</span>
-        </div>
-        <div class="field">
-          <span class="value" data-minutes>00</span>
-          <span class="label">Minutes</span>
-        </div>
-        <div class="field">
-          <span class="value" data-seconds>00</span>
-          <span class="label">Seconds</span>
+        <div class="timer">
+          <div class="field">
+            <span class="value" data-days>00</span>
+            <span class="label">Days</span>
+          </div>
+          <div class="field">
+            <span class="value" data-hours>00</span>
+            <span class="label">Hours</span>
+          </div>
+          <div class="field">
+            <span class="value" data-minutes>00</span>
+            <span class="label">Minutes</span>
+          </div>
+          <div class="field">
+            <span class="value" data-seconds>00</span>
+            <span class="label">Seconds</span>
+          </div>
         </div>
       </div>
     </main>
+
   </body>
 </html>
