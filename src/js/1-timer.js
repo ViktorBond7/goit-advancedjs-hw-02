@@ -18,7 +18,13 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  onOpen() {
+    refs.inputData.style.borderColor = '#4e75ff';
+  },
   onClose(selectedDates) {
+    refs.inputData.style.borderColor = '';
+    console.dir(selectedDates[0]);
+
     if (selectedDates[0] < new Date()) {
       iziToast.info({
         title: 'Hello',
@@ -36,8 +42,7 @@ const addLeadingZero = value => {
   return value.toString().padStart(2, '0');
 };
 
-const dataPickr = flatpickr(refs.inputData, options);
-// flatpickr(refs.inputData, options);
+flatpickr(refs.inputData, options);
 
 const onBtnClick = e => {
   e.preventDefault();
@@ -62,7 +67,6 @@ const onBtnClick = e => {
 
 refs.btn.addEventListener('click', onBtnClick);
 
-////////////////////////////////////////////////
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -81,7 +85,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
-// console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-// console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-// console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
