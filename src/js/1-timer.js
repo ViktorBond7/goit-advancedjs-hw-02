@@ -23,7 +23,6 @@ const options = {
   },
   onClose(selectedDates) {
     refs.inputData.style.borderColor = '';
-    console.dir(selectedDates[0]);
 
     if (selectedDates[0] < new Date()) {
       iziToast.info({
