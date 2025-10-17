@@ -11,32 +11,32 @@ const onBtnCreatePromisesSubmit = e => {
   e.preventDefault();
 
   const statusPromise = e.target.elements.state.value;
-  const delayPromise = e.target.elements.delay.value;
+  const delay = Number(e.target.elements.delay.value);
 
   const promise = new Promise((res, rej) => {
     setTimeout(() => {
       if (statusPromise === 'fulfilled') {
-        res('Ok');
+        res(`✅ Fulfilled promise in ${delay}ms`);
       } else {
-        rej('err');
+        rej(`❌ Rejected promise in ${delay}ms`);
       }
-    }, delayPromise);
+    }, delay);
   });
 
   refs.promiseForm.reset();
 
   promise
-    .then(() => {
+    .then(res => {
       iziToast.success({
         title: 'Ok',
-        message: `✅ Fulfilled promise in ${delayPromise}ms`,
+        message: res,
         position: 'topRight',
       });
     })
-    .catch(() => {
+    .catch(err => {
       iziToast.error({
         title: 'Error',
-        message: `❌ Rejected promise in ${delayPromise}ms`,
+        message: err,
         position: 'topRight',
       });
     });
